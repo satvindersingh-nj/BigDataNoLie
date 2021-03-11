@@ -1,8 +1,10 @@
-<div *ngFor="let post of posts">
-  <huk-card heading="{{ post.title }}" offset="false" padding="1x" top="false"
-    ><h3 class="underlined">What is Lorem Ipsum?</h3>
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    </p></huk-card
-  >
+<div *ngIf="!selectedPost" class="row">
+  <div class="col-sm-8 col-offset-2"></div>
+  <div *ngFor="let post of posts" (click)="onSelect(post)">
+    <huk-card heading="{{ post.title }}" offset="false" padding="1x" top="false"
+      ><h3 class="underlined">What is Lorem Ipsum?</h3>
+      <p>{{ post.userName }} {{ post.dateTime | date }}</p></huk-card
+    >
+  </div>
 </div>
+<app-post-detail [post]="selectedPost" (click)="goBack()"></app-post-detail>

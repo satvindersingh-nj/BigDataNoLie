@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
-
+import { Post } from './post';
+import { POSTS } from './post-list/mock-posts';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostsService {
+  constructor() {}
 
-  constructor() { }
+  getPosts(): Post[] {
+    return POSTS;
+  }
 }

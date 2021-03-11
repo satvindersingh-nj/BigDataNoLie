@@ -1,1 +1,6 @@
-<p>post-detail works!</p>
+<div *ngIf="post">
+  <huk-card heading="{{ post.title }}" offset="false" padding="1x" top="false"
+    ><h3 class="underlined">What is Lorem Ipsum?</h3>
+    <p>{{ post.userName }} {{ post.dateTime | date }}</p></huk-card
+  >
+</div>
